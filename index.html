@@ -28,9 +28,14 @@
 	        AFRAME.registerComponent('x-button-listener', {
 		        init: function () {
 			        let el = this.el;
-			        el.addEventListener('xbuttondown', function (evt) {
-				        el.setAttribute('visible', !el.getAttribute('visible'));
-			        });
+			        el.addEventListener('xbuttondown', e => el.setAttribute('visible', !el.getAttribute('visible')));
+		        }
+	        });
+
+	        AFRAME.registerComponent('a-button-listener', {
+		        init: function () {
+			        let el = this.el;
+			        el.addEventListener('abuttondown', e => el.setAttribute('visible', !el.getAttribute('visible')));
 		        }
 	        });
         </script>
@@ -45,11 +50,11 @@
 <!--            <a-entity vive-controls="hand: left"></a-entity>-->
 <!--            <a-entity vive-controls="hand: right"></a-entity>-->
 
-<!--            <a-entity oculus-touch-controls="hand: left"></a-entity>-->
-<!--            <a-entity oculus-touch-controls="hand: right"></a-entity>-->
+            <a-entity oculus-touch-controls="hand: left" x-button-listener></a-entity>
+            <a-entity oculus-touch-controls="hand: right" a-button-listener></a-entity>
 
-            <a-entity hand-controls="left" laser-controls x-button-listener raycaster="far: 5"></a-entity>
-            <a-entity hand-controls="right" laser-controls x-button-listener raycaster="far: 5"></a-entity>
+            <a-entity hand-controls="left" laser-controls raycaster="far: 5"></a-entity>
+            <a-entity hand-controls="right" laser-controls raycaster="far: 5"></a-entity>
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
