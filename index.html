@@ -28,21 +28,22 @@
 	        AFRAME.registerComponent('x-button-listener', {
 		        init: function () {
 			        let el = this.el;
-			        el.addEventListener('xbuttondown', e => el.setAttribute('visible', !el.getAttribute('visible')));
+			        el.addEventListener('xbuttonpress', e => el.setAttribute('visible', !el.getAttribute('visible')));
 		        }
 	        });
 
 	        AFRAME.registerComponent('a-button-listener', {
 		        init: function () {
 			        let el = this.el;
-			        el.addEventListener('abuttondown', e => el.setAttribute('visible', !el.getAttribute('visible')));
+			        el.addEventListener('abuttonpress', e => el.setAttribute('visible', !el.getAttribute('visible')));
 		        }
 	        });
         </script>
     </head>
     <body>
         <a-scene>
-            <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue"></a-box>
+<!--             change-color-on-hover="color: blue" -->
+            <a-box color="#EF2D5E" position="0 1 -4"></a-box>
 <!--            <a-entity gearvr-controls></a-entity>-->
 <!--            <a-entity oculus-go-controls></a-entity>-->
 <!--            <a-entity daydream-controls></a-entity>-->
@@ -50,14 +51,14 @@
 <!--            <a-entity vive-controls="hand: left"></a-entity>-->
 <!--            <a-entity vive-controls="hand: right"></a-entity>-->
 
-            <a-entity oculus-touch-controls="hand: left" x-button-listener></a-entity>
-            <a-entity oculus-touch-controls="hand: right" a-button-listener></a-entity>
+            <a-entity laser-controls="hand: left" x-button-listener></a-entity>
+            <a-entity laser-controls="hand: right" a-button-listener></a-entity>
 
-            <a-entity hand-controls="left" laser-controls raycaster="far: 5"></a-entity>
-            <a-entity hand-controls="right" laser-controls raycaster="far: 5"></a-entity>
-            <a-camera>
-                <a-cursor></a-cursor>
-            </a-camera>
+<!--            <a-entity hand-controls="left" laser-controls raycaster="far: 5"></a-entity>-->
+<!--            <a-entity hand-controls="right" laser-controls raycaster="far: 5"></a-entity>-->
+<!--            <a-camera>-->
+<!--                <a-cursor></a-cursor>-->
+<!--            </a-camera>-->
         </a-scene>
     </body>
 </html>
