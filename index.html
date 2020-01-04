@@ -38,6 +38,8 @@
 			        el.addEventListener('abuttondown', e => el.setAttribute('visible', !el.getAttribute('visible')));
 		        }
 	        });
+
+	        AFRAME.scenes[0].querySelector('[raycaster]'.components.raycaster.refreshObjects();
         </script>
     </head>
     <body>
@@ -51,8 +53,9 @@
 <!--            <a-entity vive-controls="hand: left"></a-entity>-->
 <!--            <a-entity vive-controls="hand: right"></a-entity>-->
 
-            <a-entity laser-controls="hand: left" raycaster="far: infinity" visible="true" x-button-listener></a-entity>
-            <a-entity laser-controls="hand: right" raycaster="far: infinity" visible="true" a-button-listener></a-entity>
+            <a-entity laser-controls="hand: left" visible="true" x-button-listener></a-entity>
+            <a-entity laser-controls="hand: right" visible="true" a-button-listener></a-entity>
+            <a-entity raycaster="showLine: true; far: 100" line="color: orange; opacity: 0.5"></a-entity>
 
 <!--            <a-entity hand-controls="left" laser-controls raycaster="far: 5"></a-entity>-->
 <!--            <a-entity hand-controls="right" laser-controls raycaster="far: 5"></a-entity>-->
