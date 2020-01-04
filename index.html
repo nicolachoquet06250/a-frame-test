@@ -54,14 +54,14 @@
 <!--            <a-entity vive-controls="hand: left"></a-entity>-->
 <!--            <a-entity vive-controls="hand: right"></a-entity>-->
 
-            <a-entity oculus-touch-controls="hand: left"
-                      laser-controls
+            <a-entity laser-controls="hand: left"
+                      hand-controls="left"
                       raycaster="showLine: true; far: 100"
-                      line="color: orange; opacity: 0.5" x-button-listener></a-entity>
-            <a-entity oculus-touch-controls="hand: right"
-                      laser-controls
+                      line="color: purple" x-button-listener></a-entity>
+            <a-entity laser-controls="hand: right"
+                      hand-controls="right"
                       raycaster="showLine: true; far: 100"
-                      line="color: orange; opacity: 0.5" a-button-listener></a-entity>
+                      line="color: purple" a-button-listener></a-entity>
 
 <!--            <a-entity hand-controls="left" laser-controls raycaster="far: 5"></a-entity>-->
 <!--            <a-entity hand-controls="right" laser-controls raycaster="far: 5"></a-entity>-->
