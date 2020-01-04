@@ -5,6 +5,8 @@
         <title>VR experience in JS</title>
         <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
+        <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
         <script>
 	        AFRAME.registerComponent('change-color-on-hover', {
 		        schema: {
@@ -46,54 +48,20 @@
     </head>
     <body>
         <a-scene>
-            <a-box position="-1 0.5 -3"
-                   rotation="0 45 0"
-                   color="#4CC3D9"
-                   change-color-on-hover="color: red"></a-box>
-            <a-sphere position="0 1.25 -5"
-                      radius="1.25"
-                      color="#EF2D5E"></a-sphere>
-            <a-cylinder position="1 0.75 -3"
-                        radius="0.5"
-                        height="1.5"
-                        color="#FFC65D"></a-cylinder>
-            <a-plane position="0 0 -4"
-                     rotation="-90 0 0"
-                     width="4"
-                     height="4"
-                     color="#7BC8A4"></a-plane>
-            <a-sky color="skyblue"></a-sky>
-
-            <!--<a-entity gearvr-controls
-                      hand-controls="right"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" x-button-listener></a-entity>
-            <a-entity oculus-go-controls
-                      hand-controls="right"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" x-button-listener></a-entity>
-            <a-entity daydream-controls
-                      hand-controls="right"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" x-button-listener></a-entity>
-
-            <a-entity vive-controls="hand: left"
-                      hand-controls="left"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" x-button-listener></a-entity>
-            <a-entity vive-controls="hand: right"
-                      hand-controls="left"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" x-button-listener></a-entity>-->
-
-            <a-entity laser-controls
-                      hand-controls="left"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" x-button-listener></a-entity>
-            <a-entity laser-controls
-                      hand-controls="right"
-                      raycaster="showLine: true; far: 100"
-                      line="color: purple" a-button-listener></a-entity>
+            <a-assets></a-assets>
+            <a-entity>
+                <a-camera></a-camera>
+                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
+                <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>
+            </a-entity>
+            <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+            <a-box hoverable
+                   grabbable
+                   stretchable
+                   draggable
+                   dropppable
+                   color="blue"
+                   position="0 0 -1"></a-box>
         </a-scene>
     </body>
 </html>
