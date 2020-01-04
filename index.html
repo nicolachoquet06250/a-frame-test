@@ -15,7 +15,7 @@
 			        let data = this.data;
 			        let el = this.el;  // <a-box>
                     this.schema.color.default = el.getAttribute('color');
-			        let defaultColor = el.getAttribute('material').color;
+			        let defaultColor = this.schema.color.default.color;
 
 			        el.addEventListener('mouseenter', function () {
 				        el.setAttribute('color', data.color);
@@ -88,12 +88,10 @@
 
             <a-entity laser-controls
                       hand-controls="left"
-                      cursor
                       raycaster="showLine: true; far: 100"
                       line="color: purple" x-button-listener></a-entity>
             <a-entity laser-controls
                       hand-controls="right"
-                      cursor
                       raycaster="showLine: true; far: 100"
                       line="color: purple" a-button-listener></a-entity>
         </a-scene>
