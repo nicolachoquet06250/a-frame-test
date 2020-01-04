@@ -29,6 +29,18 @@
     <body>
         <a-scene>
             <a-box color="#EF2D5E" position="0 1 -4" change-color-on-hover="color: blue"></a-box>
+            <a-entity gearvr-controls></a-entity>
+            <a-entity oculus-go-controls></a-entity>
+            <a-entity daydream-controls></a-entity>
+
+            <a-entity vive-controls="hand: left"></a-entity>
+            <a-entity vive-controls="hand: right"></a-entity>
+
+            <a-entity oculus-touch-controls="hand: left"></a-entity>
+            <a-entity oculus-touch-controls="hand: right"></a-entity>
+
+            <a-entity hand-controls="left"></a-entity>
+            <a-entity hand-controls="right"></a-entity>
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
